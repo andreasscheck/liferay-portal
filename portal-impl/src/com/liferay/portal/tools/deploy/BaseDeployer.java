@@ -134,7 +134,7 @@ public class BaseDeployer implements AutoDeployer, Deployer {
 		auiTaglibDTD = System.getProperty("deployer.aui.taglib.dtd");
 		portletTaglibDTD = System.getProperty("deployer.portlet.taglib.dtd");
 		portletExtTaglibDTD = System.getProperty(
-			"deployer.portlet.ext.taglib.dtd");
+			"deployer.portlet-ext.taglib.dtd");
 		securityTaglibDTD = System.getProperty("deployer.security.taglib.dtd");
 		themeTaglibDTD = System.getProperty("deployer.theme.taglib.dtd");
 		uiTaglibDTD = System.getProperty("deployer.ui.taglib.dtd");
@@ -258,9 +258,7 @@ public class BaseDeployer implements AutoDeployer, Deployer {
 				appServerType + " is not a valid application server type");
 		}
 
-		if (appServerType.equals(ServerDetector.GLASSFISH_ID) ||
-			appServerType.equals(ServerDetector.WEBSPHERE_ID)) {
-
+		if (appServerType.equals(ServerDetector.WEBSPHERE_ID)) {
 			unpackWar = false;
 		}
 
